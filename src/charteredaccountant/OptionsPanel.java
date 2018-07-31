@@ -29,6 +29,7 @@ public class OptionsPanel extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnNewRegistration = new javax.swing.JButton();
+        ViewRegistrationsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +44,13 @@ public class OptionsPanel extends javax.swing.JFrame {
             }
         });
 
+        ViewRegistrationsButton.setText("View Registrations");
+        ViewRegistrationsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewRegistrationsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,8 +62,10 @@ public class OptionsPanel extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(btnNewRegistration)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                        .addComponent(btnNewRegistration)
+                        .addGap(41, 41, 41)
+                        .addComponent(ViewRegistrationsButton)))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,7 +73,9 @@ public class OptionsPanel extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
-                .addComponent(btnNewRegistration)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewRegistration)
+                    .addComponent(ViewRegistrationsButton))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
 
@@ -75,6 +87,12 @@ public class OptionsPanel extends javax.swing.JFrame {
         regis.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnNewRegistrationActionPerformed
+
+    private void ViewRegistrationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewRegistrationsButtonActionPerformed
+        ViewRegistrations viewregis = new ViewRegistrations();
+        viewregis.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ViewRegistrationsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,6 +130,7 @@ public class OptionsPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ViewRegistrationsButton;
     private javax.swing.JButton btnNewRegistration;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
