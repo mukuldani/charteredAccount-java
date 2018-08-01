@@ -5,6 +5,12 @@
  */
 package charteredaccountant;
 
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Mukul Dani
@@ -27,21 +33,154 @@ public class ViewRegistrations extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableRegs = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+
+        tableRegs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tableRegs.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tableRegs.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Status", "Owner", "Mobile Number", "Landline Number", "Email ID", "Address", "Basic Salary", "Gross Salary", "Service Tax", "ESIC", "Provident Fund", "VAT", "GSTIN", "PAN", "CIN", "PT EC/RC"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableRegs);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Registration");
+
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
+        editButton.setText("Edit");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+
+        deleteButton.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(448, 448, 448)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(246, 246, 246)
+                                .addComponent(backButton)
+                                .addGap(55, 55, 55)
+                                .addComponent(editButton)
+                                .addGap(57, 57, 57)
+                                .addComponent(deleteButton)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
+                    .addComponent(editButton)
+                    .addComponent(deleteButton))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void getRegsDetails(){
+        ConnectionSQL sql;
+        Connection con = null;
+        Statement stmt = null;
+        try {
+            sql = new ConnectionSQL();
+            con=sql.conn;
+            String query = "Select * from registration";
+            PreparedStatement pst = con.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt(1);
+                String initial = rs.getString(2);
+                String name = initial+ ""+ rs.getString(3);
+                String status = rs.getString(4);
+                String owner = rs.getString(5);
+                double mobile_number = rs.getDouble(6);
+                double landline_number = rs.getDouble(7);
+                String email = rs.getString(8);
+                String address = rs.getString(9);
+                double basic_salary = rs.getDouble(10);
+                double gross_salary = rs.getDouble(11);
+                float service_tax = rs.getFloat(12);
+                float esic = rs.getFloat(13);
+                double provident_fund = rs.getDouble(14);
+                String vat = rs.getString(15);
+                String gstin = rs.getString(16);
+                String pan = rs.getString(17);
+                String cin = rs.getString(18);
+                String pt = rs.getString(19);
+                DefaultTableModel model = (DefaultTableModel)tableRegs.getModel();
+                model.addRow(new Object[] {id,name,status,owner,mobile_number,landline_number,
+                    email,address,basic_salary,gross_salary,service_tax,esic,provident_fund,vat,pan,cin,pt});
+            }    
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error : " +ex);
+            Logger.getLogger(ViewRegistrations.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        getRegsDetails();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        OptionsPanel op = new OptionsPanel();
+        op.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        
+    }//GEN-LAST:event_editButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +218,11 @@ public class ViewRegistrations extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tableRegs;
     // End of variables declaration//GEN-END:variables
 }
