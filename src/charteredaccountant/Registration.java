@@ -24,10 +24,6 @@ public class Registration extends javax.swing.JFrame {
         initailComboBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         nameTextField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        statusComboBox = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        ownerComboBox = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         mobileNumberTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -38,21 +34,10 @@ public class Registration extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         addressTextArea = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
-        serviceTaxTextField = new javax.swing.JTextField();
-        jLAbel = new javax.swing.JLabel();
-        esicTextField = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        providentFundTextField = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        vatTextField = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         panTextField = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        gstinTextField = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        cinTextField = new javax.swing.JTextField();
-        ptComboBox = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         basicSalaryTextField = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
@@ -69,14 +54,15 @@ public class Registration extends javax.swing.JFrame {
         validateAddressLabel = new javax.swing.JLabel();
         validateBasicSalaryLabel = new javax.swing.JLabel();
         validateGrossSalaryLabel = new javax.swing.JLabel();
-        validateVatRequiedLabel = new javax.swing.JLabel();
-        validateVatCorrectLabel = new javax.swing.JLabel();
-        validateGstinCorrectLabel = new javax.swing.JLabel();
         validatePanRequiredLabel = new javax.swing.JLabel();
         validatePanCorrectLabel = new javax.swing.JLabel();
-        validateCinRequiedLabel = new javax.swing.JLabel();
-        validateCinCorrectLabel = new javax.swing.JLabel();
-        validationGstinRequiredLabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        adharTextField = new javax.swing.JTextField();
+        validationRequiredLabel = new javax.swing.JLabel();
+        validationCorrectLabel = new javax.swing.JLabel();
+        serviceTaxLabel = new javax.swing.JLabel();
+        esicjLabel = new javax.swing.JLabel();
+        providentFundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,16 +76,6 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setText("Name");
-
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel4.setText("Status");
-
-        statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Proprioty ", "Partnership", "Company ", "Trust" }));
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel5.setText("Owner");
-
-        ownerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual ", "Company" }));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setText("Mobile Number");
@@ -132,20 +108,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel10.setText("PAN");
 
-        jLAbel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLAbel.setText("VAT IN");
-
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel12.setText("Service Tax");
-
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel13.setText("GSTIN");
-
-        vatTextField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                vatTextFieldFocusLost(evt);
-            }
-        });
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel14.setText("Provident Fund");
@@ -158,31 +122,6 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel15.setText("ESIC");
-
-        gstinTextField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                gstinTextFieldFocusLost(evt);
-            }
-        });
-        gstinTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gstinTextFieldActionPerformed(evt);
-            }
-        });
-
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel16.setText("PT EC/ RC");
-
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel17.setText("Company CIN");
-
-        cinTextField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cinTextFieldFocusLost(evt);
-            }
-        });
-
-        ptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PT EC", "PT RC" }));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel18.setText("Basic Salalry");
@@ -204,6 +143,11 @@ public class Registration extends javax.swing.JFrame {
 
         backButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
 
         submitButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         submitButton.setText("Submit");
@@ -215,6 +159,11 @@ public class Registration extends javax.swing.JFrame {
 
         clearButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         clearButton.setText("Clear");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
 
         validateNameLabel.setEnabled(false);
 
@@ -234,19 +183,24 @@ public class Registration extends javax.swing.JFrame {
 
         validateGrossSalaryLabel.setEnabled(false);
 
-        validateVatRequiedLabel.setEnabled(false);
-
-        validateVatCorrectLabel.setEnabled(false);
-
-        validateGstinCorrectLabel.setEnabled(false);
-
         validatePanRequiredLabel.setEnabled(false);
 
         validatePanCorrectLabel.setEnabled(false);
 
-        validateCinRequiedLabel.setEnabled(false);
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel4.setText("Adhar");
 
-        validateCinCorrectLabel.setEnabled(false);
+        adharTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                adharTextFieldFocusLost(evt);
+            }
+        });
+
+        serviceTaxLabel.setEnabled(false);
+
+        esicjLabel.setEnabled(false);
+
+        providentFundLabel.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -256,133 +210,114 @@ public class Registration extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(initailComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(72, 72, 72)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(initailComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ownerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(validateNameLabel)
-                                            .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(validateMobileRequiredLabel)
-                                            .addComponent(mobileNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(validateMobileCorrectLabel))
-                                        .addGap(36, 36, 36)))
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel7)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(statusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(validateLandlineLabel)
-                                            .addComponent(landlineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(validateNameLabel)
+                                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(199, 199, 199)
                                 .addComponent(jLabel1)))
-                        .addContainerGap(349, Short.MAX_VALUE))
+                        .addContainerGap(582, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(289, 289, 289)
                         .addComponent(jLabel19)
                         .addGap(77, 77, 77)
                         .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(providentFundLabel)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(36, 36, 36)
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jLabel9))
-                                .addComponent(validateEmailRequiredLabel)
-                                .addComponent(validateEmailCorrectLabel))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(validateAddressLabel)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel18)
-                                .addComponent(jLabel12)
-                                .addComponent(jLAbel)
-                                .addComponent(jLabel16)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(jLabel10)))
-                            .addGap(23, 23, 23)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel10))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(basicSalaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(validateBasicSalaryLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(validateGrossSalaryLabel)
+                                    .addComponent(grossSalaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(serviceTaxLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(jLabel15)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(esicjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(basicSalaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(validateBasicSalaryLabel))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(validateGrossSalaryLabel)
-                                        .addComponent(grossSalaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(serviceTaxTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(45, 45, 45)
-                                    .addComponent(jLabel15)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(esicTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(providentFundTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(vatTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(55, 55, 55)
-                                            .addComponent(jLabel13))
-                                        .addComponent(validateVatRequiedLabel)
-                                        .addComponent(validateVatCorrectLabel)
-                                        .addComponent(validatePanRequiredLabel)
-                                        .addComponent(validatePanCorrectLabel)
-                                        .addComponent(ptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(panTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel17)))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(gstinTextField)
-                                        .addComponent(cinTextField)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(validateGstinCorrectLabel)
-                                                .addComponent(validationGstinRequiredLabel)
-                                                .addComponent(validateCinRequiedLabel)
-                                                .addComponent(validateCinCorrectLabel))
-                                            .addGap(0, 0, Short.MAX_VALUE)))))))
+                                            .addGap(32, 32, 32)
+                                            .addComponent(jLabel4))
+                                        .addComponent(validatePanRequiredLabel)
+                                        .addComponent(validatePanCorrectLabel))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(86, 86, 86)
+                                        .addComponent(backButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(submitButton)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(adharTextField)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(validationCorrectLabel)
+                                                    .addComponent(validationRequiredLabel))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addComponent(clearButton)
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(backButton)
-                        .addGap(58, 58, 58)
-                        .addComponent(submitButton)
-                        .addGap(73, 73, 73)
-                        .addComponent(clearButton)))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel9))
+                                            .addComponent(validateEmailRequiredLabel)
+                                            .addComponent(validateEmailCorrectLabel))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(validateAddressLabel)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(220, 220, 220)
+                                        .addComponent(jLabel7)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(validateLandlineLabel)
+                                            .addComponent(landlineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(validateMobileRequiredLabel)
+                                    .addComponent(mobileNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(validateMobileCorrectLabel))))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -394,8 +329,6 @@ public class Registration extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(statusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(initailComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -404,14 +337,12 @@ public class Registration extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mobileNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(ownerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
                     .addComponent(jLabel7)
                     .addComponent(landlineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(validateMobileRequiredLabel)
-                    .addComponent(validateLandlineLabel))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(validateLandlineLabel)
+                    .addComponent(validateMobileRequiredLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(validateMobileCorrectLabel)
                 .addGap(20, 20, 20)
@@ -442,70 +373,63 @@ public class Registration extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(serviceTaxTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel15)
-                        .addComponent(esicTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)
-                        .addComponent(providentFundTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel12))
-                .addGap(26, 26, 26)
+                        .addComponent(esicjLabel)
+                        .addComponent(providentFundLabel))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12)
+                        .addComponent(serviceTaxLabel)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vatTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLAbel)
-                    .addComponent(jLabel13)
-                    .addComponent(gstinTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel4)
+                    .addComponent(adharTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(validateVatRequiedLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(validateVatCorrectLabel)
-                            .addComponent(validationGstinRequiredLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(validateGstinCorrectLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(panTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
-                            .addComponent(cinTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(validatePanRequiredLabel)
-                    .addComponent(validateCinRequiedLabel))
+                .addComponent(validatePanRequiredLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(validatePanCorrectLabel)
-                    .addComponent(validateCinCorrectLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ptComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(20, 20, 20)
+                    .addComponent(validationRequiredLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(validationCorrectLabel)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton)
                     .addComponent(submitButton)
                     .addComponent(clearButton))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void gstinTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gstinTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_gstinTextFieldActionPerformed
-
+    private void clearText(){
+            nameTextField.setText("");
+            mobileNumberTextField.setText("");
+            landlineTextField.setText("");
+            emailTextField.setText("");
+            addressTextArea.setText("");
+            basicSalaryTextField.setText("");
+            grossSalaryTextField.setText("");
+            serviceTaxLabel.setText("");
+            esicjLabel.setText("");
+            providentFundLabel.setText("");
+            panTextField.setText("");
+            adharTextField.setText("");
+    }
+    
     private void basicSalaryTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_basicSalaryTextFieldFocusLost
         double basic_salary = Double.parseDouble(basicSalaryTextField.getText().toString());
         if(basic_salary < 10000){
-            esicTextField.setText("1.75");
+            esicjLabel.setText("1.75");
             double pf_amt = basic_salary * 1.75;
-            providentFundTextField.setText(String.valueOf(pf_amt));
+            providentFundLabel.setText(String.valueOf(pf_amt));
         }else if(basic_salary > 21000){
-            esicTextField.setText("4.75");
+            esicjLabel.setText("4.75");
             double pf_amt = basic_salary * 4.75;
-            providentFundTextField.setText(String.valueOf(pf_amt));
+            providentFundLabel.setText(String.valueOf(pf_amt));
         }
     }//GEN-LAST:event_basicSalaryTextFieldFocusLost
 
@@ -520,9 +444,7 @@ public class Registration extends javax.swing.JFrame {
             validateMobileRequiredLabel.setForeground(Color.red);
         }
         if(m.find() && m.group().equals(mob_number)){
-            validateMobileCorrectLabel.setVisible(true);
-            validateMobileCorrectLabel.setText("Thank you!!");
-            validateMobileCorrectLabel.setForeground(Color.green);
+            
         }else{
             validateMobileCorrectLabel.setVisible(true);
             validateMobileCorrectLabel.setText("Please enter the correct mobile number");
@@ -540,35 +462,13 @@ public class Registration extends javax.swing.JFrame {
             validateEmailRequiredLabel.setForeground(Color.red);
         }
         if(m.matches()){
-            validateEmailCorrectLabel.setVisible(true);
-            validateEmailCorrectLabel.setText("Thank You!!");
-            validateEmailCorrectLabel.setForeground(Color.green);
+           
         }else{
             validateEmailCorrectLabel.setVisible(true);
-            validateEmailCorrectLabel.setText("Please enter correct mobile number");
+            validateEmailCorrectLabel.setText("Please enter correct email id");
             validateEmailCorrectLabel.setForeground(Color.red);
         }
     }//GEN-LAST:event_emailTextFieldFocusLost
-
-    private void gstinTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gstinTextFieldFocusLost
-        String gstin = gstinTextField.getText().toString();
-        Pattern p = Pattern.compile(consts.GSTIN_REGEX);
-        Matcher m = p.matcher(gstin);
-        if(gstin.isEmpty()){
-            validationGstinRequiredLabel.setVisible(true);
-            validationGstinRequiredLabel.setText("Please enter the email");
-            validationGstinRequiredLabel.setForeground(Color.red);
-        }
-        if(m.matches()){
-            validateGstinCorrectLabel.setVisible(true);
-            validateGstinCorrectLabel.setText("Thank You!!");
-            validateGstinCorrectLabel.setForeground(Color.green);
-        }else{
-            validateGstinCorrectLabel.setVisible(true);
-            validateGstinCorrectLabel.setText("Please enter correct mobile number");
-            validateGstinCorrectLabel.setForeground(Color.red);
-        }
-    }//GEN-LAST:event_gstinTextFieldFocusLost
 
     private void panTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_panTextFieldFocusLost
         String pan = panTextField.getText().toString();
@@ -576,13 +476,11 @@ public class Registration extends javax.swing.JFrame {
         Matcher m = p.matcher(pan);
         if(pan.isEmpty()){
             validatePanRequiredLabel.setVisible(true);
-            validatePanRequiredLabel.setText("Please enter the email");
+            validatePanRequiredLabel.setText("Please enter the pan");
             validatePanRequiredLabel.setForeground(Color.red);
         }
         if(m.matches()){
-            validatePanCorrectLabel.setVisible(true);
-            validatePanCorrectLabel.setText("Thank You!!");
-            validatePanCorrectLabel.setForeground(Color.green);
+            
         }else{
             validatePanCorrectLabel.setVisible(true);
             validatePanCorrectLabel.setText("Please enter correct pan number");
@@ -593,71 +491,46 @@ public class Registration extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         String initial = initailComboBox.getSelectedItem().toString();
         String fullName = nameTextField.getText().toString();
-        String status = statusComboBox.getSelectedItem().toString();
-        String owner = ownerComboBox.getSelectedItem().toString();
         double mobile_number = Double.parseDouble(mobileNumberTextField.getText().toString());
         double landline_number = Double.parseDouble(landlineTextField.getText().toString());
         String email = emailTextField.getText().toString();
         String address = addressTextArea.getText().toString();
         double basic_salary = Double.parseDouble(basicSalaryTextField.getText().toString());
         double gross_salary = Double.parseDouble(grossSalaryTextField.getText().toString());
-        float service_tax = Float.parseFloat(serviceTaxTextField.getText().toString());
-        float esic = Float.parseFloat(esicTextField.getText().toString());
-        double provident_fund = Double.parseDouble(providentFundTextField.getText().toString());
-        String vat = vatTextField.getText().toString();
-        String gstin = gstinTextField.getText().toString();
+        float service_tax = Float.parseFloat(serviceTaxLabel.getText().toString());
+        float esic = Float.parseFloat(esicjLabel.getText().toString());
+        double provident_fund = Double.parseDouble(providentFundLabel.getText().toString());
         String pan = panTextField.getText().toString();
-        String cin = cinTextField.getText().toString();
-        String pt = ptComboBox.getSelectedItem().toString();
+        String aadhar = adharTextField.getText().toString();
         
         if(fullName.isEmpty()){
             validateNameLabel.setEnabled(true);
             validateNameLabel.setText("Please enter the name");
             validateNameLabel.setForeground(Color.red);
-        }else{
-            validateNameLabel.setEnabled(true);
-            validateNameLabel.setText("Thank You!!");
-            validateNameLabel.setForeground(Color.GREEN);
         }
         
         if(landlineTextField.getText().isEmpty()){
             validateLandlineLabel.setEnabled(true);
-            validateLandlineLabel.setText("Please enter the name");
+            validateLandlineLabel.setText("Please enter the landline");
             validateLandlineLabel.setForeground(Color.red);
-        }else{
-            validateLandlineLabel.setEnabled(true);
-            validateLandlineLabel.setText("Thank You!!");
-            validateLandlineLabel.setForeground(Color.GREEN);
         }
         
         if(addressTextArea.getText().isEmpty()){
             validateAddressLabel.setEnabled(true);
-            validateAddressLabel.setText("Please enter the name");
+            validateAddressLabel.setText("Please enter the address");
             validateAddressLabel.setForeground(Color.red);
-        }else{
-            validateAddressLabel.setEnabled(true);
-            validateAddressLabel.setText("Thank You!!");
-            validateAddressLabel.setForeground(Color.GREEN);
         }
         
         if(basicSalaryTextField.getText().isEmpty()){
             validateBasicSalaryLabel.setEnabled(true);
-            validateBasicSalaryLabel.setText("Please enter the name");
+            validateBasicSalaryLabel.setText("Please enter the basic salary");
             validateBasicSalaryLabel.setForeground(Color.red);
-        }else{
-            validateBasicSalaryLabel.setEnabled(true);
-            validateBasicSalaryLabel.setText("Thank You!!");
-            validateBasicSalaryLabel.setForeground(Color.GREEN);
         }
         
-        if(basicSalaryTextField.getText().isEmpty()){
+        if(grossSalaryTextField.getText().isEmpty()){
             grossSalaryTextField.setEnabled(true);
-            grossSalaryTextField.setText("Please enter the name");
+            grossSalaryTextField.setText("Please enter the gorss salary");
             grossSalaryTextField.setForeground(Color.red);
-        }else{
-            grossSalaryTextField.setEnabled(true);
-            grossSalaryTextField.setText("Thank You!!");
-            grossSalaryTextField.setForeground(Color.GREEN);
         }
         
         ConnectionSQL sql;
@@ -666,29 +539,26 @@ public class Registration extends javax.swing.JFrame {
         try {
             sql = new ConnectionSQL();
             con=sql.conn;
-            String query = "Insert into registration values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "Insert into registration values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pst = con.prepareStatement(query);
             pst.setInt(1, 0);
             pst.setString(2, initial);
             pst.setString(3, fullName);
-            pst.setString(4, status);
-            pst.setString(5, owner);
-            pst.setDouble(6, mobile_number);
-            pst.setDouble(7, landline_number);
-            pst.setString(8, email);
-            pst.setString(9, address);
-            pst.setDouble(10, basic_salary);
-            pst.setDouble(11, gross_salary);
-            pst.setFloat(12, service_tax);
-            pst.setFloat(13, esic);
-            pst.setDouble(14, provident_fund);
-            pst.setString(15, vat);
-            pst.setString(16, gstin);
-            pst.setString(17, pan);
-            pst.setString(18, cin);
-            pst.setString(19, pt);
+            pst.setDouble(4, mobile_number);
+            pst.setDouble(5, landline_number);
+            pst.setString(6, email);
+            pst.setString(7, address);
+            pst.setDouble(8, basic_salary);
+            pst.setDouble(9, gross_salary);
+            pst.setFloat(10, service_tax);
+            pst.setFloat(11, esic);
+            pst.setDouble(12, provident_fund);
+            pst.setString(13, pan);
+            pst.setString(14, aadhar);
             int rs = pst.executeUpdate();
             System.out.println("Result set" +rs);
+            clearText();
+
             JOptionPane.showMessageDialog(this, "Data is successfully entered");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error : " +ex);
@@ -698,23 +568,64 @@ public class Registration extends javax.swing.JFrame {
         
     }//GEN-LAST:event_submitButtonActionPerformed
 
-    private void vatTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_vatTextFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vatTextFieldFocusLost
-
-    private void cinTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cinTextFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cinTextFieldFocusLost
-
     private void grossSalaryTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_grossSalaryTextFieldFocusLost
         double gross_salary = Double.parseDouble(grossSalaryTextField.getText().toString());
-        double sal_year = gross_salary * 12;
-        if(sal_year > 900000){
-            serviceTaxTextField.setText("14");
-        }else{
-            serviceTaxTextField.setText("0");
+        int service_tax_percent;
+        double service_tax;
+        if(gross_salary < 250000){
+            serviceTaxLabel.setEnabled(true);
+            serviceTaxLabel.setText(String.valueOf("0"));
+        }else if(gross_salary >= 250001 && gross_salary <= 500000){
+            serviceTaxLabel.setEnabled(true);
+            service_tax_percent = 5;
+            double before_cess = (service_tax_percent * gross_salary) / 100;
+            double after_cess = (3 * before_cess) / 100;
+            service_tax = before_cess + after_cess;
+            serviceTaxLabel.setText(String.valueOf(service_tax));
+        }else if(gross_salary >= 500001 && gross_salary <= 1000000){
+            serviceTaxLabel.setEnabled(true);
+            service_tax_percent = 20;
+            double before_cess = (service_tax_percent * gross_salary) / 100;
+            double after_cess = (3 * before_cess) / 100;
+            service_tax = before_cess + after_cess;
+            serviceTaxLabel.setText(String.valueOf(service_tax));
+        }else if(gross_salary >= 1000001){
+            serviceTaxLabel.setEnabled(true);
+            service_tax_percent = 30;
+            double before_cess = (service_tax_percent * gross_salary) / 100;
+            double after_cess = (3 * before_cess) / 100;
+            service_tax = before_cess + after_cess;
+            serviceTaxLabel.setText(String.valueOf(service_tax));
         }
     }//GEN-LAST:event_grossSalaryTextFieldFocusLost
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        OptionsPanel op = new OptionsPanel();
+        op.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        clearText();
+    }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void adharTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adharTextFieldFocusLost
+        String adhar = adharTextField.getText().toString();
+        Pattern p = Pattern.compile(consts.AADHAR_REGEX);
+        Matcher m = p.matcher(adhar);
+        if(adhar.isEmpty()){
+            validationRequiredLabel.setVisible(true);
+            validationRequiredLabel.setText("Please enter the adhar");
+            validationRequiredLabel.setForeground(Color.red);
+        }
+        if(m.matches()){
+            //Do nothing
+        }else{
+            validationCorrectLabel.setVisible(true);
+            validationCorrectLabel.setText("Please enter correct aadhar number");
+            validationCorrectLabel.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_adharTextFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -754,30 +665,24 @@ public class Registration extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea addressTextArea;
+    private javax.swing.JTextField adharTextField;
     private javax.swing.JButton backButton;
     private javax.swing.JTextField basicSalaryTextField;
-    private javax.swing.JTextField cinTextField;
     private javax.swing.JButton clearButton;
     private javax.swing.JTextField emailTextField;
-    private javax.swing.JTextField esicTextField;
+    private javax.swing.JLabel esicjLabel;
     private javax.swing.JTextField grossSalaryTextField;
-    private javax.swing.JTextField gstinTextField;
     private javax.swing.JComboBox<String> initailComboBox;
-    private javax.swing.JLabel jLAbel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -786,30 +691,22 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JTextField landlineTextField;
     private javax.swing.JTextField mobileNumberTextField;
     private javax.swing.JTextField nameTextField;
-    private javax.swing.JComboBox<String> ownerComboBox;
     private javax.swing.JTextField panTextField;
-    private javax.swing.JTextField providentFundTextField;
-    private javax.swing.JComboBox<String> ptComboBox;
-    private javax.swing.JTextField serviceTaxTextField;
-    private javax.swing.JComboBox<String> statusComboBox;
+    private javax.swing.JLabel providentFundLabel;
+    private javax.swing.JLabel serviceTaxLabel;
     private javax.swing.JButton submitButton;
     private javax.swing.JLabel validateAddressLabel;
     private javax.swing.JLabel validateBasicSalaryLabel;
-    private javax.swing.JLabel validateCinCorrectLabel;
-    private javax.swing.JLabel validateCinRequiedLabel;
     private javax.swing.JLabel validateEmailCorrectLabel;
     private javax.swing.JLabel validateEmailRequiredLabel;
     private javax.swing.JLabel validateGrossSalaryLabel;
-    private javax.swing.JLabel validateGstinCorrectLabel;
     private javax.swing.JLabel validateLandlineLabel;
     private javax.swing.JLabel validateMobileCorrectLabel;
     private javax.swing.JLabel validateMobileRequiredLabel;
     private javax.swing.JLabel validateNameLabel;
     private javax.swing.JLabel validatePanCorrectLabel;
     private javax.swing.JLabel validatePanRequiredLabel;
-    private javax.swing.JLabel validateVatCorrectLabel;
-    private javax.swing.JLabel validateVatRequiedLabel;
-    private javax.swing.JLabel validationGstinRequiredLabel;
-    private javax.swing.JTextField vatTextField;
+    private javax.swing.JLabel validationCorrectLabel;
+    private javax.swing.JLabel validationRequiredLabel;
     // End of variables declaration//GEN-END:variables
 }

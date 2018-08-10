@@ -37,8 +37,6 @@ public class ViewRegistrations extends javax.swing.JFrame {
         tableRegs = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
-        editButton = new javax.swing.JButton();
-        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -54,11 +52,11 @@ public class ViewRegistrations extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Status", "Owner", "Mobile Number", "Landline Number", "Email ID", "Address", "Basic Salary", "Gross Salary", "Service Tax", "ESIC", "Provident Fund", "VAT", "GSTIN", "PAN", "CIN", "PT EC/RC"
+                "ID", "Initial", "Name", "Mobile Number", "Landline Number", "Email ID", "Address", "Basic Salary", "Gross Salary", "Service Tax", "ESIC", "Provident Fund", "PAN", "Aadhar"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, true, false, false, false, false, false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -77,15 +75,6 @@ public class ViewRegistrations extends javax.swing.JFrame {
             }
         });
 
-        editButton.setText("Edit");
-        editButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButtonActionPerformed(evt);
-            }
-        });
-
-        deleteButton.setText("Delete");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,19 +85,14 @@ public class ViewRegistrations extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(448, 448, 448)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(246, 246, 246)
-                                .addComponent(backButton)
-                                .addGap(55, 55, 55)
-                                .addComponent(editButton)
-                                .addGap(57, 57, 57)
-                                .addComponent(deleteButton)))
+                        .addGap(448, 448, 448)
+                        .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(400, 400, 400)
+                .addComponent(backButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,10 +102,7 @@ public class ViewRegistrations extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backButton)
-                    .addComponent(editButton)
-                    .addComponent(deleteButton))
+                .addComponent(backButton)
                 .addContainerGap())
         );
 
@@ -142,25 +123,20 @@ public class ViewRegistrations extends javax.swing.JFrame {
                 int id = rs.getInt(1);
                 String initial = rs.getString(2);
                 String name = initial+ ""+ rs.getString(3);
-                String status = rs.getString(4);
-                String owner = rs.getString(5);
-                double mobile_number = rs.getDouble(6);
-                double landline_number = rs.getDouble(7);
-                String email = rs.getString(8);
-                String address = rs.getString(9);
-                double basic_salary = rs.getDouble(10);
-                double gross_salary = rs.getDouble(11);
-                float service_tax = rs.getFloat(12);
-                float esic = rs.getFloat(13);
-                double provident_fund = rs.getDouble(14);
-                String vat = rs.getString(15);
-                String gstin = rs.getString(16);
-                String pan = rs.getString(17);
-                String cin = rs.getString(18);
-                String pt = rs.getString(19);
+                double mobile_number = rs.getDouble(4);
+                double landline_number = rs.getDouble(5);
+                String email = rs.getString(6);
+                String address = rs.getString(7);
+                double basic_salary = rs.getDouble(8);
+                double gross_salary = rs.getDouble(9);
+                float service_tax = rs.getFloat(10);
+                float esic = rs.getFloat(11);
+                double provident_fund = rs.getDouble(12);
+                String pan = rs.getString(13);
+                String aadhar = rs.getString(14);
                 DefaultTableModel model = (DefaultTableModel)tableRegs.getModel();
-                model.addRow(new Object[] {id,name,status,owner,mobile_number,landline_number,
-                    email,address,basic_salary,gross_salary,service_tax,esic,provident_fund,vat,pan,cin,pt});
+                model.addRow(new Object[] {id,initial,name,mobile_number,landline_number,
+                    email,address,basic_salary,gross_salary,service_tax,esic,provident_fund,pan,aadhar});
             }    
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error : " +ex);
@@ -177,10 +153,6 @@ public class ViewRegistrations extends javax.swing.JFrame {
         op.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
-
-    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        
-    }//GEN-LAST:event_editButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,8 +191,6 @@ public class ViewRegistrations extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton deleteButton;
-    private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableRegs;

@@ -19,4 +19,5 @@ public class Constants {
     
     public static final String PAN_REGEX = "[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}";    
     public static final String GSTIN_REGEX = "[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[0-9]{1}[Zz]{1}[A-Za-z0-9]{1}";
+    public static final String AADHAR_REGEX = "[0-9]{4}[0-9]{4}[0-9]{4}";
 }
