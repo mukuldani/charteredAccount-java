@@ -15,6 +15,7 @@ public class Registration extends javax.swing.JFrame {
     public ArrayList<CustomerData> arrayCustd = new ArrayList<CustomerData>();
     public Registration() {
         initComponents();
+        this.setBounds(300, 140, 714, 480);
     }
     Constants consts = new Constants();
     @SuppressWarnings("unchecked")

@@ -18,6 +18,7 @@ public class TaxRegis extends javax.swing.JFrame {
     
     public TaxRegis(ArrayList<CustomerData> tempcust) {
         initComponents();
+        this.setBounds(380, 160, 495, 380);
         arrayCustd = tempcust;
         userNameLabel.setEnabled(true);
         userNameLabel.setText(arrayCustd.get(0).getName());
@@ -241,6 +242,7 @@ public class TaxRegis extends javax.swing.JFrame {
             hrajLabel.setText(String.valueOf(hra));
         }
         
+        //DA Calculation
         if(employeeType.equals("Government")){
             da = (10 * basicSalary) / 100;
             dajLabel.setVisible(true);
@@ -251,7 +253,7 @@ public class TaxRegis extends javax.swing.JFrame {
             dajLabel.setText(String.valueOf(da));
         }
         
-        
+        //Service Tax Calculation
         if(basicSalary < 0){
             JOptionPane.showConfirmDialog(this, "Salary should be greater than zero","Error",JOptionPane.ERROR_MESSAGE);
         }else if(basicSalary > 0 && basicSalary <= 20834){
